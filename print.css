@@ -1,8 +1,37 @@
-/* print.css - a small css library for printing webpages
- *
- * v0.0.0(2025-09-09)
+/* print - a small css library for printing webpages
+ * similar to Gutenberg, but different.
+ * With the goal to make it very costumizable.
+ * 
+ * v0.0.1 (insert date here)
  */
 
 @page {
-  size: A6;
+  width: 66ch;
+}
+
+@page: right {
+  @bottom-right {
+    content: counter(page);
+  }
+}
+
+@page: left {
+  @bottom-left {
+    content: counter(page);
+  }
+}
+
+
+pre,
+blockquote {
+  break-inside: avoid;
+}
+
+a[href]:after {
+  content: " (" attr(href) ")";
+}
+
+/* hide the elements we do not want to see on the website */
+.print--hidden {
+  display: none;
 }
