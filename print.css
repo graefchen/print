@@ -9,19 +9,6 @@
   width: 66ch;
 }
 
-@page: right {
-  @bottom-right {
-    content: counter(page);
-  }
-}
-
-@page: left {
-  @bottom-left {
-    content: counter(page);
-  }
-}
-
-
 pre,
 blockquote {
   break-inside: avoid;
@@ -34,4 +21,18 @@ a[href]:after {
 /* hide the elements we do not want to see on the website */
 .print--hidden {
   display: none;
+}
+
+.print--pagenum {
+  @page: right {
+    @bottom-right {
+      content: counter(page);
+    }
+  }
+
+  @page: left {
+    @bottom-left {
+      content: counter(page);
+    }
+  }
 }
